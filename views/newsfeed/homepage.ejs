@@ -1,0 +1,23 @@
+<%- include ../partials/_header %>
+
+<% if (photos) {%>
+<div class="row thumbnail" style="margin-top: 10px;">
+  <div class="col-md-6 well">
+    <h3 class=" well-sm">Newsfeed  </h3>
+  </div>
+  <div class="col-md-6 text-center">
+  <% for (var i = 0; i < photos.length; i++) { 
+    photo = photos[i]; %>
+    <img src="<%=photo.thumbnail%>" alt="pic should be here"/>
+    <%= photo.caption %>
+  <% } %>
+    
+  </div>
+</div>
+
+<% } else { %>
+  <h3> Product Not Found </h3>
+<% } %>
+
+<%- include ../partials/_footer %>
+
